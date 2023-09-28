@@ -14,7 +14,7 @@
     #give point to puder
 #if puder has 3 points den puder wins
 import random
-import randint
+#import randint #This line causes an immediate crash, which means you did not test before submitting.
 #declerations
 max_range = -1
 min_range = -1
@@ -40,6 +40,7 @@ player =  input("What Do You Want Me To Call You?\nType Your Name in, then Press
 print("You Need To Guess A Number; You Have 5 Guesses. \nIf You Guess Right You Get A Cookie, \nIf You Can't Guess It In 5 Guesses Then The Computer Gets Your Cookies")
 is_correct = input("Please type yes if correct, if no type no.\n")
 if is_correct == "yes" or "YES" or "Yes" or "yES" or "YeS" or "YEs" or "yEs" or "yeS":
+# if is_correct == "yes" or is_correct == "YES"...  You need to put the is_correct == in front of each string you check for. 
     print("Ok {player}, Lets Rock!")
 else:
     player =  input("What Do You Want Me To Call You?\nType Your Name in, then Press enter")
@@ -49,3 +50,5 @@ while point_p != 3 and point_c != 3 :
     guess_nuber = 0
     for guesses in range(5):
         print(f"You {5 - guess_nuber}")
+
+# CODE IS NOT COMPLETE. 
