@@ -17,7 +17,7 @@ def countdown(t = 6):
 
 def drop_titan():
     print("Prepare for Titanfall")
-    countdown(t = 6)
+    countdown(int(t))
     print("Good Work Pilot Now Hop In")
 
 def titanfall(player_input, release_titan_key):
