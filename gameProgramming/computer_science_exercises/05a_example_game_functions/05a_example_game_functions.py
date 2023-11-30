@@ -34,3 +34,6 @@ def Blowing_up(self_destruct):
 while titan_meter == True:
     titanfall
 
+
+
+# Code Review by Ryan Kelley 
