@@ -2,6 +2,10 @@
 import random
 import time
 t = 0
+
+# Use random.randint()  
+
+
 #for
 # = == += -=
 titan_meter = True
@@ -31,8 +35,8 @@ def Blowing_up(self_destruct):
     for self_destruct in range(2):
         print(self_destruct)
 
-while titan_meter == True:
-    titanfall
+while titan_meter == True: # infinite loop created here  
+    titanfall # Missing () 
 
 
 
