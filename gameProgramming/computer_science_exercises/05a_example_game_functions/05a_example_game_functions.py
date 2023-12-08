@@ -2,10 +2,7 @@
 import random
 import time
 t = 0
-
 # Use random.randint()  
-
-
 #for
 # = == += -=
 titan_meter = True
@@ -24,10 +21,11 @@ def drop_titan():
     countdown(int(t))
     print("Good Work Pilot Now Hop In")
 
-def titanfall(player_input, release_titan_key):
+def titanfall(player_input, titan_meter):
     while titanfall == True:
-        if player_input == release_titan_key:
-            drop_titan
+        if player_input == "v":
+            drop_titan()
+            titan_meter = False
         else:
             pass
 
@@ -36,7 +34,7 @@ def Blowing_up(self_destruct):
         print(self_destruct)
 
 while titan_meter == True: # infinite loop created here  
-    titanfall # Missing () 
+    titanfall()
 
 
 
