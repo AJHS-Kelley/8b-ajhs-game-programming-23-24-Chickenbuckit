@@ -21,11 +21,12 @@ def drop_titan():
     countdown(int(t))
     print("Good Work Pilot Now Hop In")
 
-def titanfall(player_input, titan_meter):
+def titanfall(player_input, ):
+    player_input = input('Press "v" to drop your titan')
     while titanfall == True:
         if player_input == "v":
             drop_titan()
-            titan_meter = False
+            return
         else:
             pass
 
@@ -35,7 +36,6 @@ def Blowing_up(self_destruct):
 
 while titan_meter == True: # infinite loop created here  
     titanfall()
-
 
 
 # Code Review by Ryan Kelley 
