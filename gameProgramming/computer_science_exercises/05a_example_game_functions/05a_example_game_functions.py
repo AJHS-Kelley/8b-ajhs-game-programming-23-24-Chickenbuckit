@@ -21,14 +21,14 @@ def drop_titan():
     countdown(int(t))
     print("Good Work Pilot Now Hop In")
 
-def titanfall(player_input, ):
+def titanfall(player_input):
     player_input = input('Press "v" to drop your titan')
     while titanfall == True:
         if player_input == "v":
             drop_titan()
             return
         else:
-            pass
+            return
 
 def Blowing_up(self_destruct):
     for self_destruct in range(2):
