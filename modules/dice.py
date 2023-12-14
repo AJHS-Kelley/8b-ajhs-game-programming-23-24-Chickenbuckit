@@ -1,4 +1,4 @@
-# Dice Rolling mod, Casey Boyce, v0.2
+# Dice Rolling mod, Casey Boyce, v0.3
 import random
 
 def display(num_dice, size_dice): # Works of 12-14-23
@@ -27,3 +27,10 @@ def is_double(roll1, roll2):
     else:
         is_double = False
     return is_double
+
+def explode_dice(roll, size_dice):
+    if roll == size_dice:
+        explode_dice = True
+    else:
+        explode_dice = False
+    return explode_dice

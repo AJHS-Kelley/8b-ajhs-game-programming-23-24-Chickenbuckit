@@ -7,3 +7,8 @@ if dice.is_double(roll1, roll2):
     print("You Rolled A Double, Please, Go Again")
 else:
     print("Sorry, This Is Not A Double")
+
+if dice.explode_dice(roll1, 6):
+    print("This Roll Exploded\n")
+    roll1 += dice.roll(1, 6)
+    print(roll1)
