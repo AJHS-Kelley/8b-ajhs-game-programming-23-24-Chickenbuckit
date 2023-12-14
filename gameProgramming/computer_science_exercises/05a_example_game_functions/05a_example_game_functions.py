@@ -1,7 +1,8 @@
 #example game functions .py, Casey Boyce< v0.4
 import random
 import time
-self_destruct = ("                                                  Death imminent", "                                                  Are You Sure", "                                                  Self Destructing")
+player_input = "v"
+self_destruct = ("                                                        Death imminent", "                                                   Are You Sure", "                                             Self Destructing")
 titan_meter = True
 
 def countdown(t = 6):
@@ -15,22 +16,26 @@ def countdown(t = 6):
 
 def drop_titan():
     global titan_meter
+    print("                                                  Prepare for Titanfall")
     countdown()
     print("                                                  Good Work Pilot! Now Hop In")
     titan_meter = False  # Set titan_meter to False to exit the loop
 
-def titanfall(player_input):
+def titanfall():
     global titan_meter
-    player_input = input('                                                  Press "V" to drop your titan: ')
-    if player_input.upper() == "v":
+    player_input = input('                                                Press "V" to drop your titan: ')
+    if player_input.upper() == "V":
         drop_titan()
     else:
-        return
+        quit("                                               Input Error Exiting Code")
         
 def Blowing_up(self_destruct):
-    print("                                                  Pilot Your titan is taking too much damage!\n                                                  Get out or your going to die!")
+    time.sleep(1)
+    print("                Titan:                    Engaging multiple hostile Titans")
+    time.sleep(random.randint(3, 6))
+    print("                                           Pilot Your titan is taking too much damage!\n                                                 Get out or your going to die!")
     time.sleep(5)
-    print('                                                  Press "E" to eject from Titan')
+    print('                                                  Press "X" to eject from Titan')
     for phase in self_destruct:
         time.sleep(2)
         print(phase)
@@ -38,11 +43,10 @@ def Blowing_up(self_destruct):
 
 while titan_meter:
     titanfall()
-    if player_input.upper() == "v":
-        print("                                                  Prepare for Titanfall")
+    if player_input.upper() == "V":
         titan_meter = False
     else:
-        break
+        quit("                                               Input Error Exiting Code")
     Blowing_up(self_destruct)
 
 # Code Review by Ryan Kelley 
