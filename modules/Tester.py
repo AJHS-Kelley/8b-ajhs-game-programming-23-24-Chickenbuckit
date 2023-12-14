@@ -1,5 +1,10 @@
 import dice
+import perfmon 
 # Dont Import random if using things that have random in it
+start = perfmon.exec_start
+stop = perfmon.exec_stop
+
+
 roll1 = dice.display(1, 6)
 roll2 = dice.display(1, 6)
 
