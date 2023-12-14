@@ -1,7 +1,7 @@
-# Dice Rolling mod, Casey Boyce, v0.1
+# Dice Rolling mod, Casey Boyce, v0.2
 import random
 
-def display(num_dice, size_dice):
+def display(num_dice, size_dice): # Works of 12-14-23
     num_rolled = 0
     sum = 0
     while num_rolled < num_dice:
@@ -12,7 +12,7 @@ def display(num_dice, size_dice):
         num_rolled += 1
     return sum
 
-def roll(num_dice, size_dice):
+def roll(num_dice, size_dice): # Works of 12-14-23
     num_rolled = 0
     sum = 0
     while num_rolled < num_dice:
@@ -20,3 +20,10 @@ def roll(num_dice, size_dice):
         sum += roll
         num_rolled += 1
     return sum
+
+def is_double(roll1, roll2):
+    if roll1 == roll2:
+        is_double = True
+    else:
+        is_double = False
+    return is_double
