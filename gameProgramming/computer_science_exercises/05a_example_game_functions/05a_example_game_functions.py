@@ -2,7 +2,7 @@
 import random
 import time
 player_input = "v"
-self_destruct = ("                                                        Death imminent", "                                                   Are You Sure", "                                             Self Destructing")
+self_destruct = ("                                                        Death imminent", "                                                   Ejecting Pilot", "                                             Self Destructing")
 titan_meter = True
 
 def countdown(t = 6):
@@ -19,7 +19,8 @@ def drop_titan():
     print("                                                  Prepare for Titanfall")
     countdown()
     print("                                                  Good Work Pilot! Now Hop In")
-    titan_meter = False  # Set titan_meter to False to exit the loop
+    print("                      Titan:              Hello Pilot")
+    titan_meter = False  # Set titan meter to False to exit the loop
 
 def titanfall():
     global titan_meter
@@ -31,15 +32,19 @@ def titanfall():
         
 def Blowing_up(self_destruct):
     time.sleep(1)
-    print("                Titan:                    Engaging multiple hostile Titans")
-    time.sleep(random.randint(3, 6))
+    print("                      Titan:              Engaging multiple hostile Titans")
+    time.sleep(1)
+    print("\n                                                      *GUNSHOTS AND GRENADES*\n")
+    time.sleep(random.randint(2, 5))
     print("                                           Pilot Your titan is taking too much damage!\n                                                 Get out or your going to die!")
     time.sleep(5)
-    print('                                                  Press "X" to eject from Titan')
-    for phase in self_destruct:
-        time.sleep(2)
-        print(phase)
-
+    player_input = input('                                                  Press "X" to eject from Titan')
+    if player_input.lower() == "x":
+        for phase in self_destruct:
+            time.sleep(2)
+            print(phase)
+    else:
+        quit("                                       You Failed To Eject From Your Titan\n                                      So Your Titan Blew Up With You In It")
 
 while titan_meter:
     titanfall()
