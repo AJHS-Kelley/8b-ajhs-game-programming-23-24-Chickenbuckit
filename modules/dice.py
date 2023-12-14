@@ -1,7 +1,7 @@
 # Dice Rolling mod, Casey Boyce, v0.1
 import random
 
-def desplay(num_dice, size_dice):
+def display(num_dice, size_dice):
     num_rolled = 0
     sum = 0
     while num_rolled < num_dice:
