@@ -1,4 +1,4 @@
-
+# casey boyce v0.4 
 def verify_sequence(dna_sequence: str, rna_sequence: str) -> bool:
     is_mach = False
     if len(dna_sequence) != len(rna_sequence):
@@ -45,7 +45,7 @@ def calc_score(rna_sequence: str, rna_time: float) -> int :
     score *= score_multi
     return score
 
-def save_score(dna_sequence: str, rna_sequence: str, rna_time: float) -> None:
+def save_score(dna_sequence: str, rna_sequence: str, rna_time: float, score: int) -> None:
    player_first_name = input("Please enter your first name")
    player_last_name = input("Please enter your last name")
    full_name = player_first_name + " " + player_last_name
@@ -58,3 +58,7 @@ def save_score(dna_sequence: str, rna_sequence: str, rna_time: float) -> None:
    # "a" mode -- creates file -- adds info allredy created
    save_data.write(f"Dna sequence :{dna_sequence}\nRna sequence : {rna_sequence}\n")
    save_data.write(f"Transcription Time: {rna_time}\n")
+   save_data.write(f"Score : {score}\n")
+   save_data.write(f"{full_name}\n")
+   save_data.write(f"{date_time.dateTime.now()}\n")
+   save_data.close()
