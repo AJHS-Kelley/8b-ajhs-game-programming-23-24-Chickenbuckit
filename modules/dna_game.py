@@ -1,3 +1,4 @@
+
 def verify_sequence(dna_sequence: str, rna_sequence: str) -> bool:
     is_mach = False
     if len(dna_sequence) != len(rna_sequence):
@@ -50,4 +51,10 @@ def save_score(dna_sequence: str, rna_sequence: str, rna_time: float) -> None:
    full_name = player_first_name + " " + player_last_name
 
    file_name = "dna_replicantion_score" + full_name + ".txt"
-   
+   save_data = open(file_name, "a")
+   #file modes
+   # "x" mode -- create file -- errors if file is allredy created
+   # "w" mode -- creates file -- overrights if allredy created
+   # "a" mode -- creates file -- adds info allredy created
+   save_data.write(f"Dna sequence :{dna_sequence}\nRna sequence : {rna_sequence}\n")
+   save_data.write(f"Transcription Time: {rna_time}\n")
