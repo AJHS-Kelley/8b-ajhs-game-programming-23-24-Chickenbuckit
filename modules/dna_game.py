@@ -1,4 +1,15 @@
 # casey boyce v0.4 
+def do_transcrition(dna_sequence: str) -> tuple:
+
+   print(f"the DNA sequence is {dna_sequence}\n")
+   print("You will now generate the RNA sequence that that would match.\n")
+   print("Please remember, in the DNA seqence A pairs with U from the DNA sequence.\n")
+   rna_start = time.time()
+   rna_sequence = input("Please enter the matching RNA sequence. Leave no spaces!\nThen press enter\n").upper
+   rna_stop = time.time()
+   rna_time = rna_stop - rna_stop
+   return (rna_sequence, rna_time)
+
 def verify_sequence(dna_sequence: str, rna_sequence: str) -> bool:
     is_mach = False
     if len(dna_sequence) != len(rna_sequence):
