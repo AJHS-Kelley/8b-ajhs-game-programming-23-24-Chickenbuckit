@@ -36,4 +36,10 @@ MESSAGECOLOR = WITE
 
 #establish windo margens
 XMARGEN = int((WINDO_WITH - (TILE_SIZE * BOARD_WIDTH + (BOARD_WIDTH - 1)) / 2))
-YMARGEN = 
+YMARGEN = int((WINDO_WITH - (TILE_SIZE * BOARD_WIDTH + (BOARD_WIDTH - 1)) / 2))
+
+#DIRECTION
+UP = 'up'
+DOWN = 'down'
+LEFT = 'left'
+RIGHT = 'right'
