@@ -62,3 +62,11 @@ def save_score(dna_sequence: str, rna_sequence: str, rna_time: float, score: int
    save_data.write(f"{full_name}\n")
    save_data.write(f"{date_time.dateTime.now()}\n")
    save_data.close()
+
+
+
+dna = den_gna()
+rna = do_transcrition(dna)
+if verify_sequence(dna, rna[0]):
+   score = (calc_score(rna[0], rna[1]))
+   save_score(dna, rna[0], rna[1], score)
