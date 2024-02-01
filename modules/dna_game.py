@@ -15,7 +15,7 @@ def verify_sequence(dna_sequence: str, rna_sequence: str) -> bool:
     if len(dna_sequence) != len(rna_sequence):
         print("Sorry mate but the length of the DNA dose not match the length of the RNA")
         return is_mach
-    for dna_bace, rna_base in zip(dna_sequence, rna_sequence):
+    for dna_bace, rna_bace in zip(dna_sequence, rna_sequence):
         if dna_bace == "A" and rna_bace == "U":
            is_mach = True 
         elif dna_bace == "C" and rna_bace == "G":
@@ -71,7 +71,7 @@ def save_score(dna_sequence: str, rna_sequence: str, rna_time: float, score: int
    save_data.write(f"Transcription Time: {rna_time}\n")
    save_data.write(f"Score : {score}\n")
    save_data.write(f"{full_name}\n")
-   save_data.write(f"{date_time.dateTime.now()}\n")
+   save_data.write(f"{datetime.dateTime.now()}\n")
    save_data.close()
 
 
