@@ -1,4 +1,11 @@
-# casey boyce v0.4 
+# casey boyce v0.5, code fix?
+import time, datetime
+from random import choice
+
+def gen_dna() -> str:
+   bases_generated = 0
+   bases_reqested = int(input("please enter a positeve integer number of bases to generate.\n"))
+
 def do_transcrition(dna_sequence: str) -> tuple:
 
    print(f"the DNA sequence is {dna_sequence}\n")
@@ -76,7 +83,7 @@ def save_score(dna_sequence: str, rna_sequence: str, rna_time: float, score: int
 
 
 
-dna = den_gna()
+dna = gen_dna()
 rna = do_transcrition(dna)
 if verify_sequence(dna, rna[0]):
    score = (calc_score(rna[0], rna[1]))
