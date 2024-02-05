@@ -6,7 +6,7 @@ screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 
-test_surface = pygame.image.load('Pictures/images.png')
+test_surface = pygame.image.load('img\gross.jpg')
 
 while True:
     for event in pygame.event.get():
