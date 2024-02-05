@@ -83,7 +83,7 @@ def save_score(dna_sequence: str, rna_sequence: str, rna_time: float, score: int
 
 
 
-dna = gen_dna()
+dna = gen_dna() # Double check this function, your code returned None as the DNA sequence. 
 rna = do_transcrition(dna)
 if verify_sequence(dna, rna[0]):
    score = (calc_score(rna[0], rna[1]))
