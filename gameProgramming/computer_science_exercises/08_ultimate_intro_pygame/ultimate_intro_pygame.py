@@ -9,7 +9,7 @@ clock = pygame.time.Clock()
 all_fonts = pygame.font.get_fonts()
 test_font = pygame.font.SysFont("comicsansms", 50)
 
-sky_box = pygame.image.load('img\download.jpg').convert()
+sky_box = pygame.image.load('img\download.png').convert()
 grond_surface = pygame.image.load('img\gross.png').convert()
 text_surface = test_font.render("Casey's game", False, 'black')
 
