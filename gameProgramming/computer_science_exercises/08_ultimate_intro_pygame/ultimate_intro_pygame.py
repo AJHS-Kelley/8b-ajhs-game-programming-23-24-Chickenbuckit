@@ -1,4 +1,4 @@
-# ultimate intro into pygame casey boyce v0.4
+# ultimate intro into pygame casey boyce v0.5
 import pygame
 from sys import exit
 
@@ -14,7 +14,7 @@ grond_surface = pygame.image.load('img\gross.png').convert()
 text_surface = test_font.render("Casey's game", False, 'black')
 
 snail_enimy = pygame.image.load('img\Snail.png').convert_alpha()
-snail_x_pos = 800
+snail_rect = snail_enimy.get_rect(midbottem = (800,300))
 
 
 player_surf = pygame.image.load('img/grandma.png').convert_alpha()
@@ -28,9 +28,11 @@ while True:
     screen.blit(grond_surface, (0, 300))
     screen.blit(sky_box, (0, 0))
     screen.blit(text_surface, (300, 50))
-    snail_x_pos -= 6
-    if snail_x_pos < -100 : snail_x_pos = 800
-    screen.blit(snail_enimy,(snail_x_pos, 250))
-    screen.blit(player_surf,(80,200))
+    snail_rect.x -= 6
+    if snail_rect.right < 0 : snail_rect.left = 800
+    screen.blit(snail_enimy, snail_rect)
+    screen.blit(player_surf, player_rect)
+    if player_rect.colliderect(snail_rect):
+        exit()
     pygame.display.update()
     clock.tick(60)
