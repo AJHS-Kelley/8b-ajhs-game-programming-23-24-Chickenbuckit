@@ -2,6 +2,10 @@
 import pygame
 from sys import exit
 
+# Your code crashes immediately due to an unfound file name.  
+# You are a little bit behind, but should be able to finish by end of class Tuesday if you work outside of class time. 
+
+
 pygame.init()
 screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('Runner')
