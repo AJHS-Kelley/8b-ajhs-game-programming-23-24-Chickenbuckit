@@ -2,4 +2,23 @@ Game type: RAGE PLATFORMER
 Theme: Bright, mideval, Day after war feel
 
 Win: Get To The End
-Loss: no Loss
+Loss: no Loss or rage quit
+
+levels / screens :
+    Underwater
+    Out of the pond and to the castel
+    castel
+
+objective:
+    get to the top
+
+Difficalty change:
+    Dont Fall Now
+
+controls:
+    light jump
+    big jump
+    left 
+    right
+    esc
+    click
