@@ -1,1 +1,5 @@
 Game type: RAGE PLATFORMER
+Theme: Bright, mideval, Day after war feel
+
+Win: Get To The End
+Loss: no Loss
