@@ -1,5 +1,6 @@
 #Casey Boyce, Final Project, 0.1
 import time, pygame, sys
+
 resilution = 0 # 0 for low. 1 for high
 
 if resilution == 0:
