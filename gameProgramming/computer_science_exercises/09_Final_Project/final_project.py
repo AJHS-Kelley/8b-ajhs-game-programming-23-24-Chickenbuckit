@@ -12,10 +12,10 @@ else:
 
 screen = pygame.display.set_mode((x,y))
 start_time = pygame.time.get_ticks()
-difficulty = input("\n\nPlease chose a Difficulty Easy or Hard.\n\n\nDefalt is Easy  ").capitalize
+difficulty = input("\n\nPlease chose a Difficulty Easy or Hard.\n\n\nDefalt is Easy  ").lower
 
-if difficulty == "HARD":
-    pygame.display.set_caption("Leaping Ruler -- Why Did You Pick This Mode ")
+if difficulty == "hard":
+    pygame.display.set_caption("Leaping Ruler -- Dont Fall Now ")
 else:
     pygame.display.set_caption("Leaping Ruler -- Baby Mode ")
 
