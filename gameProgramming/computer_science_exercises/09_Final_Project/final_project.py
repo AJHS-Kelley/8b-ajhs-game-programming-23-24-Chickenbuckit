@@ -1,9 +1,21 @@
 #Casey Boyce, Final Project, 0.1
 import time, pygame, sys, os
 
+def bg_animation():
+    while True:
+        screen.blit('gameProgramming/IMG/bg water/pixil-frame-0.png')
+        time.sleep(3)
+        screen.blit('gameProgramming/IMG/bg water/pixil-frame-1.png')
+        time.sleep(3)
+        screen.blit('gameProgramming/IMG/bg water/pixil-frame-2.png')
+        time.sleep(3)
+
+def ground():
+    screen.fill('gameProgramming/IMG/bg water/groundsand.png')
+
 def game_start():
-    
-    pass
+    bg_animation()
+    ground()
 
 resolution = input('\nResolution:\n    0 for 800 by 600\n    1 for 1920 by 1080 (Default)\n')
 
@@ -30,31 +42,48 @@ else:
 start = pygame.image.load('gameProgramming/IMG/bg water/Start.png')
 start_small = pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png')
 
-exiting = False
-
 if resolution != '0':
     screen.blit(start, (0, 0))
 else:
     screen.blit(start_small, (0, 0))
 
-while exiting != True:
-    pygame.display.update()
+import pygame
+import sys
+
+pygame.init()
+
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Game Window")
+
+start = pygame.Surface((800, 600))  # Create a start screen surface
+# Fill start screen with a color or load an image
+
+start_passed = False
+
+def game_start():
+    # Function to start the game
+    pass
 
 while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
     keys = pygame.key.get_pressed()
-    if screen.blit(start) == True:
+
+    if start_passed:
+        if keys[pygame.K_a]:
+            pass
+        if keys[pygame.K_d]:
+            pass
+        if keys[pygame.K_w]:
+            pass
+        if keys[pygame.K_s]:
+            pass
+    else:
         if keys[pygame.K_x]:
             start_passed = True
-        else:
-            pass
-        if start_passed == True:
-            if keys[pygame.K_a]:
-                pass
-            if keys[pygame.K_d]:
-                pass
-            if keys[pygame.K_w]:
-                pass
-            if keys[pygame.K_s]:
-                pass
-    pygame.display.update()
+            game_start()
 
+    pygame.display.update()
