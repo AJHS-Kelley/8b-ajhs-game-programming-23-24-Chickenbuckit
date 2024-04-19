@@ -1,16 +1,22 @@
 #Casey Boyce, Final Project, 0.1
-import time, pygame, sys, os 
+import time, pygame, sys, os
 
-resilution = input('\nresilution:\n    0 for 800 by 600\n    1 for 1920 by 1080 (Defalt)\n') # 0 for low. 1 for high
-a = 20
-z = 5
-if resilution == '0':
+def game_start():
+    
+    pass
+
+resolution = input('\nResolution:\n    0 for 800 by 600\n    1 for 1920 by 1080 (Default)\n')
+
+# Default values
+x = 1920
+y = 1080
+window_position = (5, 20)
+
+if resolution == '0':
     x = 800
     y = 600
-else:
-    x = 1920
-    y = 1080
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (z,a)
+
+os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % window_position
 
 screen = pygame.display.set_mode((x,y))
 start_time = pygame.time.get_ticks()
@@ -26,10 +32,29 @@ start_small = pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png
 
 exiting = False
 
-if resilution != '0':
+if resolution != '0':
     screen.blit(start, (0, 0))
 else:
     screen.blit(start_small, (0, 0))
 
 while exiting != True:
     pygame.display.update()
+
+while True:
+    keys = pygame.key.get_pressed()
+    if screen.blit(start) == True:
+        if keys[pygame.K_x]:
+            start_passed = True
+        else:
+            pass
+        if start_passed == True:
+            if keys[pygame.K_a]:
+                pass
+            if keys[pygame.K_d]:
+                pass
+            if keys[pygame.K_w]:
+                pass
+            if keys[pygame.K_s]:
+                pass
+    pygame.display.update()
+
