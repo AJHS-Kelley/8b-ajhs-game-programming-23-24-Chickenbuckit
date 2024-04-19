@@ -1,5 +1,5 @@
 #Casey Boyce, Final Project, 0.1
-import time, pygame, sys, os
+import time, pygame, sys, os 
 
 resilution = input('\nresilution:\n    0 for 800 by 600\n    1 for 1920 by 1080 (Defalt)\n') # 0 for low. 1 for high
 a = 20
@@ -21,9 +21,15 @@ if difficulty == "hard":
 else:
     pygame.display.set_caption("Leaping Ruler -- Baby Mode ")
 
-start = pygame.image.load('gameProgramming/IMG/bg water/Start.png').convert()
+start = pygame.image.load('gameProgramming/IMG/bg water/Start.png')
+start_small = pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png')
 
-screen.blit(start, (0, 0))
-pygame.display.update()
+exiting = False
 
-time.sleep(10)
+if resilution != '0':
+    screen.blit(start, (0, 0))
+else:
+    screen.blit(start_small, (0, 0))
+
+while exiting != True:
+    pygame.display.update()
