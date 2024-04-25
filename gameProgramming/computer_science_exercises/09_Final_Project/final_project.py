@@ -1,21 +1,53 @@
 #Casey Boyce, Final Project, 0.1
 import time, pygame, sys, os
-
+pygame.image.load('gameProgramming/IMG/bg water/groundsandSmall.png')
+pygame.image.load('gameProgramming/IMG/bg water/groundsand.png')
+pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-0.png')
+pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-0Small.png')
+pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-1.png')
+pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-1Small.png')
+pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2.png')
+pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2Small.png')
+pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png')
+pygame.image.load('gameProgramming/IMG/bg water/Start.png')
 def bg_animation():
     while True:
-        screen.blit('gameProgramming/IMG/bg water/pixil-frame-0.png')
-        pygame.display.update()
-        time.sleep(3)
-        screen.blit('gameProgramming/IMG/bg water/pixil-frame-1.png')
-        pygame.display.update()
-        time.sleep(3)
-        screen.blit('gameProgramming/IMG/bg water/pixil-frame-2.png')
-        pygame.display.update()
-        time.sleep(3)
+        if resolution == '0':
+            screen.blit('gameProgramming/IMG/bg water/pixil-frame-0Small.png')
+            pygame.display.update()
+            time.sleep(3)
+            screen.blit('gameProgramming/IMG/bg water/pixil-frame-1Small.png')
+            pygame.display.update()
+            time.sleep(3)
+            screen.blit('gameProgramming/IMG/bg water/pixil-frame-2Small.png')
+            pygame.display.update()
+            time.sleep(3)
+        else:
+            screen.blit('gameProgramming/IMG/bg water/pixil-frame-0.png')
+            pygame.display.update()
+            time.sleep(3)
+            screen.blit('gameProgramming/IMG/bg water/pixil-frame-1.png')
+            pygame.display.update()
+            time.sleep(3)
+            screen.blit('gameProgramming/IMG/bg water/pixil-frame-2.png')
+            pygame.display.update()
+            time.sleep(3)
+
+#class Platform(pygame.sprite.Sprite): #NOT DONE YET
+    def __init__(self, xloc, yloc, imgw, imgh, img):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.image.load(os.path.join('gameProgramming/IMG/Fsh1.png', img)).convert()
+        self.image.convert_alpha()
+        self.image.set_colorkey()
+        self.rect = self.image.get_rect()
+        self.rect.y = yloc
+        self.rect.x = xloc
 
 def ground():
-    screen.fill('gameProgramming/IMG/bg water/groundsand.png')
-
+    if resolution == '0':
+        screen.blit('gameProgramming/IMG/bg water/groundsandSmall.png')
+    else:
+        screen.blit('gameProgramming/IMG/bg water/groundsand.png')        
 def game_start():
     bg_animation()
     ground()
@@ -54,10 +86,6 @@ pygame.init()
 
 start_passed = False
 
-def game_start():
-    # Function to start the game
-    pass
-
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -74,6 +102,8 @@ while True:
         if keys[pygame.K_w]:
             pass
         if keys[pygame.K_s]:
+            pass
+        if keys[pygame.K_SPACE]:
             pass
     else:
         if keys[pygame.K_x]:
