@@ -4,10 +4,13 @@ import time, pygame, sys, os
 def bg_animation():
     while True:
         screen.blit('gameProgramming/IMG/bg water/pixil-frame-0.png')
+        pygame.display.update()
         time.sleep(3)
         screen.blit('gameProgramming/IMG/bg water/pixil-frame-1.png')
+        pygame.display.update()
         time.sleep(3)
         screen.blit('gameProgramming/IMG/bg water/pixil-frame-2.png')
+        pygame.display.update()
         time.sleep(3)
 
 def ground():
@@ -47,16 +50,7 @@ if resolution != '0':
 else:
     screen.blit(start_small, (0, 0))
 
-import pygame
-import sys
-
 pygame.init()
-
-screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Game Window")
-
-start = pygame.Surface((800, 600))  # Create a start screen surface
-# Fill start screen with a color or load an image
 
 start_passed = False
 
