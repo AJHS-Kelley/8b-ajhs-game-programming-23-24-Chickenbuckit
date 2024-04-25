@@ -37,6 +37,7 @@ def bg_animation():
             screen.blit(frame2, (450, 50))
             pygame.display.update()
             time.sleep(3)
+        pygame.display.update()
 
 #class Platform(pygame.sprite.Sprite): #NOT DONE YET
     def __init__(self, xloc, yloc, imgw, imgh, img):
@@ -60,7 +61,6 @@ def ground():
 
 def game_start():
     bg_animation()
-    ground()
 
 resolution = input('\nResolution:\n    0 for 800 by 600\n    1 for 1920 by 1080 (Default)\n')
 
