@@ -1,35 +1,40 @@
 #Casey Boyce, Final Project, 0.1
 import time, pygame, sys, os
-pygame.image.load('gameProgramming/IMG/bg water/groundsandSmall.png')
-pygame.image.load('gameProgramming/IMG/bg water/groundsand.png')
-pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-0.png')
-pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-0Small.png')
-pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-1.png')
-pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-1Small.png')
-pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2.png')
-pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2Small.png')
-pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png')
-pygame.image.load('gameProgramming/IMG/bg water/Start.png')
+#loading images (if it does anything)
+darkness = pygame.image.load('gameProgramming/IMG/bg water/Black filler.png')
+sands = pygame.image.load('gameProgramming/IMG/bg water/groundsandSmall.png')
+sand = pygame.image.load('gameProgramming/IMG/bg water/groundsand.png')
+frame0 = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-0.png')
+frame0s = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-0Small.png')
+frame1 = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-1.png')
+frame1s = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-1Small.png')
+frame2 = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2.png')
+frame2s = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2Small.png')
+starts = pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png')
+start = pygame.image.load('gameProgramming/IMG/bg water/Start.png')
+
 def bg_animation():
     while True:
         if resolution == '0':
-            screen.blit('gameProgramming/IMG/bg water/pixil-frame-0Small.png')
+            screen.blit(darkness, (0, 0))
+            screen.blit(frame0s, (0, 0))
             pygame.display.update()
             time.sleep(3)
-            screen.blit('gameProgramming/IMG/bg water/pixil-frame-1Small.png')
+            screen.blit(frame1s, (0, 0))
             pygame.display.update()
             time.sleep(3)
-            screen.blit('gameProgramming/IMG/bg water/pixil-frame-2Small.png')
+            screen.blit(frame2s, (0, 0))
             pygame.display.update()
             time.sleep(3)
         else:
-            screen.blit('gameProgramming/IMG/bg water/pixil-frame-0.png')
+            screen.blit(darkness, (0, 0))
+            screen.blit(frame0, (450, 50))
             pygame.display.update()
             time.sleep(3)
-            screen.blit('gameProgramming/IMG/bg water/pixil-frame-1.png')
+            screen.blit(frame1, (450, 50))
             pygame.display.update()
             time.sleep(3)
-            screen.blit('gameProgramming/IMG/bg water/pixil-frame-2.png')
+            screen.blit(frame2, (450, 50))
             pygame.display.update()
             time.sleep(3)
 
@@ -45,9 +50,14 @@ def bg_animation():
 
 def ground():
     if resolution == '0':
-        screen.blit('gameProgramming/IMG/bg water/groundsandSmall.png')
+        while True:
+            pygame.display.update()
+            screen.blit(sands, (0, 0))
     else:
-        screen.blit('gameProgramming/IMG/bg water/groundsand.png')        
+        while True:
+            pygame.display.update()
+            screen.blit(sand, (0, 0))        
+
 def game_start():
     bg_animation()
     ground()
@@ -74,18 +84,16 @@ if difficulty == "hard":
 else:
     pygame.display.set_caption("Leaping Ruler -- Baby Mode ")
 
-start = pygame.image.load('gameProgramming/IMG/bg water/Start.png')
-start_small = pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png')
-
 if resolution != '0':
     screen.blit(start, (0, 0))
 else:
-    screen.blit(start_small, (0, 0))
+    screen.blit(starts, (0, 0))
 
 pygame.init()
 
 start_passed = False
 
+# movement
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
