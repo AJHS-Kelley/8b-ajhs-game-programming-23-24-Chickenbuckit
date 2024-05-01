@@ -1,6 +1,6 @@
 #Casey Boyce, Final Project, 0.1
 import time, pygame, sys, os
-#loading images (if it does anything)
+#loading images (if it does anything) (it does)
 darkness = pygame.image.load('gameProgramming/IMG/bg water/Black filler.png')
 sands = pygame.image.load('gameProgramming/IMG/bg water/groundsandSmall.png')
 sand = pygame.image.load('gameProgramming/IMG/bg water/groundsand.png')
@@ -12,6 +12,10 @@ frame2 = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2.png')
 frame2s = pygame.image.load('gameProgramming/IMG/bg water/pixil-frame-2Small.png')
 starts = pygame.image.load('gameProgramming/IMG/bg water/Start_smallrez.png')
 start = pygame.image.load('gameProgramming/IMG/bg water/Start.png')
+
+# debug
+log_file  = "leaping_ruler_debug.txt"
+log_data = open(log_file, "w")
 
 def bg_animation():
     while True:
@@ -39,10 +43,10 @@ def bg_animation():
             time.sleep(3)
         pygame.display.update()
 
-#class Platform(pygame.sprite.Sprite): #NOT DONE YET
-    def __init__(self, xloc, yloc, imgw, imgh, img):
+class Platform(pygame.sprite.Sprite): #NOT DONE YET
+    def grounds(self, xloc, yloc, imgw, imgh, img):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load(os.path.join('gameProgramming/IMG/Fsh1.png', img)).convert()
+        self.image = pygame.image.load(os.path.join(sands, img)).convert()
         self.image.convert_alpha()
         self.image.set_colorkey()
         self.rect = self.image.get_rect()
